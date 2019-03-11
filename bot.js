@@ -76,5 +76,4 @@ if(message.content.startsWith(prefix + "setnothing")){
  message.channel.send(`Done!`)
  }
 });
-
-client.login(process.env.BOT_TOKEN);
+bot.login("LOGIN")
