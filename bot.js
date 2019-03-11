@@ -1,3 +1,17 @@
+const Discord = require("discord.js");
+const bot = new Discord.Client({ disableEveryone: false });
+bot.on(`ready`, () => {
+  console.log(`Logged in as ${bot.user.tag}!`);
+  bot.user.setStatus("online")
+  });
+  bot.on("message", async message => {
+ 
+  let prefix = `$`
+  let messageArray = message.content.split(" ");
+  let msg = message;
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  if(!message.content.startsWith(prefix)) return;
 if(message.content.startsWith(prefix + "setlistening")){
 let hargs = message.content.split(' ').slice(1).join(' ');
 if(!hargs) return message.reply("**الرجاء وضع الكلام الذي تريده**");
@@ -27,7 +41,7 @@ if(hargs.length < 1 || hargs.length > 50) return message.reply("**مع الأس�
 message.delete();
 bot.user.setActivity(hargs, {
 type: "STREAMING",
-             url: "https://www.twitch.tv/AzoqzMj"
+             url: "https://www.twitch.tv/Azoqzmj"
 });
 message.channel.send(`**Done! It's now Streaming:** ${hargs}`)
 }
@@ -40,7 +54,7 @@ message.delete();
 bot.user.setActivity(hargs, {
 type: "PLAYING"
 });
-message.channel.send(`**Done! It's now Streaming:** ${hargs}`)
+message.channel.send(`**Done! It's now Playing:** ${hargs}`)
 }
 if(message.content.startsWith(prefix + "setname")){
 let hargs = message.content.split(' ').slice(1).join(' ');
@@ -61,5 +75,5 @@ if(message.content.startsWith(prefix + "setnothing")){
  bot.user.setActivity("")
  message.channel.send(`Done!`)
  }
-
+});
 client.login(process.env.BOT_TOKEN);
