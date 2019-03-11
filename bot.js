@@ -3,7 +3,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== '505072087287726090') return;
+  if (message.author.id !== '226442200') return;
 
 if (message.content.startsWith(prefix + 'p')) {
   client.user.setGame(argresult);
@@ -31,7 +31,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== '505072087287726090') return;
+  if (message.author.id !== '226442200') return;
 
 if (message.content.startsWith(prefix + 'p')) {
   client.user.setGame(argresult);
